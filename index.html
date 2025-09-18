@@ -7,53 +7,67 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #1a1a1a, #2e2e2e);
-      color: white;
+      padding: 0;
+      font-family: "Poppins", Arial, sans-serif;
+      background: repeating-linear-gradient(
+        -45deg,
+        #1a1a1a,
+        #1a1a1a 40px,
+        #111 40px,
+        #111 80px
+      );
+      color: #fff;
       text-align: center;
     }
     header {
       padding: 50px 20px 20px;
     }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
+    h1 {
+      font-size: 4em;
+      margin: 0;
+      font-weight: 700;
     }
-    header p {
-      font-size: 1.2rem;
-      color: #cccccc;
+    p.description {
+      font-size: 1.3em;
+      margin-top: 15px;
+      color: #ccc;
     }
-    section {
-      margin: 60px auto;
-      max-width: 1080px;
+    h2.subheading {
+      font-size: 2em;
+      margin: 60px 0 20px;
+      font-weight: 500;
+    }
+    img {
+      width: auto;
+      max-width: 90%;
+      max-height: 80vh; /* scales image for 1080p displays */
+      border-radius: 12px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+    }
+    footer {
+      margin-top: 50px;
       padding: 20px;
-    }
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-    section img {
-      width: 100%;
-      max-width: 1080px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      font-size: 0.9em;
+      color: #888;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>luckyman9299</h1>
-    <p>Customizable description goes here</p>
+    <p class="description">Your customizable description goes here ✨</p>
   </header>
 
-  <section>
-    <h2>Stylized</h2>
+  <main>
+    <h2 class="subheading">Stylized</h2>
     <img src="build1.png" alt="Stylized Build">
-  </section>
 
-  <section>
-    <h2>Studs</h2>
+    <h2 class="subheading">Studs</h2>
     <img src="build2.png" alt="Studs Build">
-  </section>
+  </main>
+
+  <footer>
+    &copy; 2025 luckyman9299. All rights reserved.
+  </footer>
 </body>
 </html>
