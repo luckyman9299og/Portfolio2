@@ -38,27 +38,24 @@
       white-space: pre-line; /* keeps line breaks */
     }
     h2.subheading {
-      font-family: "Montserrat", sans-serif; /* Sleek bold font */
+      font-family: "Montserrat", sans-serif;
       font-size: 2.4em;
       margin: 60px 0 20px;
       font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease-out;
     }
     img {
       width: auto;
       max-width: 90%;
-      max-height: 80vh; /* scales image for 1080p displays */
+      max-height: 80vh;
       border-radius: 12px;
       box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
       opacity: 0;
       transform: translateY(30px);
       transition: all 0.8s ease-out;
     }
-    .visible {
+    img.visible {
       opacity: 1;
       transform: translateY(0);
     }
@@ -99,14 +96,14 @@
   </footer>
 
   <script>
-    const elements = document.querySelectorAll('h2, img');
+    const images = document.querySelectorAll('img');
 
     function revealOnScroll() {
       const triggerBottom = window.innerHeight * 0.85;
-      elements.forEach(el => {
-        const boxTop = el.getBoundingClientRect().top;
+      images.forEach(img => {
+        const boxTop = img.getBoundingClientRect().top;
         if (boxTop < triggerBottom) {
-          el.classList.add('visible');
+          img.classList.add('visible');
         }
       });
     }
