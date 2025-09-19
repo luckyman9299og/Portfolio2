@@ -20,6 +20,7 @@
       );
       color: #fff;
       text-align: center;
+      overflow-x: hidden;
     }
     header {
       padding: 50px 20px 20px;
@@ -41,6 +42,9 @@
       font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
     }
     img {
       width: auto;
@@ -48,6 +52,13 @@
       max-height: 80vh; /* scales image for 1080p displays */
       border-radius: 12px;
       box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+    .visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     footer {
       margin-top: 50px;
@@ -80,5 +91,22 @@
   <footer>
     &copy; 2025 luckyman9299. All rights reserved.
   </footer>
+
+  <script>
+    const elements = document.querySelectorAll('h2, img');
+
+    function revealOnScroll() {
+      const triggerBottom = window.innerHeight * 0.85;
+      elements.forEach(el => {
+        const boxTop = el.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) {
+          el.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
 </body>
 </html>
